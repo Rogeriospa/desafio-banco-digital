@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class Main {
+
+	Scanner ent = new Scanner(System.in);
+	
+	public static void main(String[] args) {
+		Cliente rogerio = new Cliente();
+		rogerio.setNome("rogerio");
+
+		Conta cc = new ContaCorrente(rogerio);
+		Conta poupanca = new ContaPoupanca(rogerio);
+		Conta investimento = new ContaInvestimento(rogerio);
+		Seguro seguro = new Seguro();
+		
+		cc.depositar(1000);
+		cc.transferir(100, poupanca);
+		investimento.depositar(1500.00);
+		
+		cc.imprimirExtrato();
+		poupanca.imprimirExtrato();
+		investimento.imprimirExtrato();
+		seguro.entrada();
+		seguro.imprimirContrato();
+		seguro.apolice();
+     }
+}
